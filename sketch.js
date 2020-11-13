@@ -15,7 +15,7 @@ function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
 	
-
+        
 	packageSprite=createSprite(width/2, 245, 10,10);
 	packageSprite.addImage(packageIMG);
 	packageSprite.scale=0.2
@@ -48,8 +48,9 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
+  packageSprite.x= packageBody.position.x 
+  packageSprite.y= packageBody.position.y 
   
-  keyPressed();
   drawSprites();
  
 }
@@ -58,8 +59,7 @@ function keyPressed() {
  if (keyCode === DOWN_ARROW) {
     // Look at the hints in the document and understand how to make the package body fall only on press of the Down arrow key.
     Matter.Body.setStatic(packageBody,false);  
-    packageSprite.x= packageBody.position.x 
-    packageSprite.y= packageBody.position.y 
+
     
   }
 }
